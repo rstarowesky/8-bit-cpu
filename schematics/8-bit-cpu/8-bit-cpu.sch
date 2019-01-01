@@ -1,11 +1,10 @@
 EESchema Schematic File Version 4
 LIBS:8-bit-cpu-cache
-LIBS:Clock-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 8268 11693 portrait
 encoding utf-8
-Sheet 1 3
+Sheet 1 6
 Title ""
 Date ""
 Rev ""
@@ -16,19 +15,73 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 4700 1200 1200 400 
+S 4700 1200 1200 600 
 U 5C212FAF
 F0 "Program Counter" 50
 F1 "program_counter.sch" 50
-F2 "CLK" I L 4700 1300 50 
+F2 "W_BUS" B L 4700 1700 50 
+F3 "CLK" I L 4700 1300 50 
+F4 "PC_CLR" I L 4700 1400 50 
+F5 "PC_LD" I L 4700 1500 50 
+F6 "PC_EN" I L 4700 1600 50 
 $EndSheet
 $Sheet
 S 1800 1200 1200 400 
 U 5C215D87
 F0 "Clock Module" 50
 F1 "clock_module.sch" 50
-F2 "CLK" O R 3000 1300 50 
+F2 "CLK" I R 3000 1300 50 
 $EndSheet
 Wire Wire Line
-	3000 1300 4700 1300
+	3000 1300 4600 1300
+$Sheet
+S 4700 2000 1200 600 
+U 5C2C69CB
+F0 "Accumulator" 50
+F1 "Accumulator.sch" 50
+F2 "CLK" I L 4700 2100 50 
+F3 "A_CLR" I L 4700 2200 50 
+F4 "A_LD" I L 4700 2300 50 
+F5 "A_OUT" I L 4700 2400 50 
+F6 "W_BUS" B L 4700 2500 50 
+$EndSheet
+Wire Bus Line
+	3800 1700 3800 2500
+Wire Bus Line
+	4700 1700 3800 1700
+Wire Bus Line
+	4700 2500 3800 2500
+Connection ~ 3800 2500
+Wire Bus Line
+	3800 2500 3800 3000
+Wire Wire Line
+	4700 2100 4600 2100
+Wire Wire Line
+	4600 2100 4600 1300
+Connection ~ 4600 1300
+Wire Wire Line
+	4600 1300 4700 1300
+$Sheet
+S 4700 2800 1200 700 
+U 5C2C9B12
+F0 "ALU" 50
+F1 "ALU.sch" 50
+F2 "ALU_OUT" I L 4700 2900 50 
+F3 "W_BUS" I L 4700 3000 50 
+F4 "CLK" I L 4700 3100 50 
+F5 "F_CLR" I L 4700 3200 50 
+F6 "F_LD" I L 4700 3300 50 
+F7 "F_OUT" I L 4700 3400 50 
+$EndSheet
+Wire Bus Line
+	4700 3000 3800 3000
+Connection ~ 3800 3000
+Wire Bus Line
+	3800 3000 3800 6100
+$Sheet
+S 4700 4400 1200 500 
+U 5C2DD996
+F0 "HL Register" 50
+F1 "HL_reg.sch" 50
+$EndSheet
 $EndSCHEMATC
