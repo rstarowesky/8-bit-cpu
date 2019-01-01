@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name 8-bit-cpu-rescue)(type Legacy)(uri ${KIPRJMOD}/8-bit-cpu-rescue.lib)(options "")(descr ""))
+)
